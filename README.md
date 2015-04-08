@@ -7,7 +7,8 @@
 [Stable Releases](https://github.com/wp-cloud/core-privacy/releases) | [Current Development (`develop` branch)](https://github.com/wp-cloud/core-privacy)
 
 ## Features
-- `@todo`
+- Load `Open Sans` locally (replaces Google Font API loading)
+  - Uses [Open Sans @font-face kit](https://github.com/FontFaceKit/open-sans) by [@gustavohenke](https://github.com/gustavohenke)
 
 ## Changelog
 * 1.0.0 (2015-mm-dd)
