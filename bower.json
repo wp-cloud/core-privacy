@@ -1,0 +1,25 @@
+{
+  "name": "core-privacy",
+  "version": "1.0.0",
+  "homepage": "https://github.com/wp-cloud/core-privacy",
+  "authors": [
+    "Christian Foellmann <foellmann@foe-services.de>"
+  ],
+  "description": "@todo",
+  "license": "GPL-2.0+",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfoellmann/bowercopy-test.git"
+  },
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "open-sans-fontface": "~1.4"
+  }
+}
