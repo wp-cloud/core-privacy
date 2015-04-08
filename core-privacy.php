@@ -57,6 +57,7 @@ class CorePrivacy {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'open_sans' ) );
+		add_action( 'init', array( $this, 'gravatar' ) );
 	} // END __construct()
 
 	/**
@@ -71,6 +72,62 @@ class CorePrivacy {
 		wp_enqueue_style( 'open-sans' );
 
 	} // END open_sans()
+
+	/**
+	 * @todo desc
+	 *
+	 * @since 1.0.0
+	 */
+	public function gravatar() {
+
+		add_filter( 'get_avatar',            array( $this, 'replace_gravatar' ), 1, 5 );
+		add_filter( 'default_avatar_select', array( $this, 'default_avatar'   )       );
+
+	} // END gravatar()
+
+	/**
+	 * Replace all instances of gravatar with a local image file
+	 * to remove the call to remote service.
+	 *
+	 * @author Andrew Norcross <andrew@andrewnorcross.com>
+	 *
+	 * @since  1.0.0
+	 * @param  string            $avatar Image tag for the user's avatar.
+	 * @param  int|object|string $id_or_email A user ID, email address, or comment object.
+	 * @param  int               $size Square avatar width and height in pixels to retrieve.
+	 * @param  string            $default URL to a default image to use if no avatar is available
+	 * @param  string            $alt Alternative text to use in the avatar image tag.
+	 * @return string `<img>` tag for the user's avatar.
+	 */
+	public function replace_gravatar( $avatar, $id_or_email, $size, $default, $alt ) {
+
+		// swap out the file for a base64 encoded image
+		$image  = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+		$avatar = "<img alt='{$alt}' src='{$image}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' style='background:#eee;' />";
+
+		// return the item
+		return $avatar;
+
+	} // END replace_gravatar()
+
+	/**
+	 * Remove avatar images from the default avatar list
+	 *
+	 * @author Andrew Norcross <andrew@andrewnorcross.com>
+	 *
+	 * @since  1.0.0
+	 * @param  string $avatar_list List of default avatars
+	 * @return string              Updated list with images removed
+	 */
+	public function default_avatar( $avatar_list ) {
+
+		// remove images
+		$avatar_list_processed = preg_replace( '|<img([^>]+)> |i', '', $avatar_list );
+
+		// send it back
+		return $avatar_list_processed;
+
+	} // END default_avatar()
 
 } // class CorePrivacy
 
