@@ -9,6 +9,7 @@
 ## Features
 - Load `Open Sans` locally (replaces Google Font API loading)
   - Uses [Open Sans @font-face kit](https://github.com/FontFaceKit/open-sans) by [@gustavohenke](https://github.com/gustavohenke)
+- Remove Gravatar Integration
 
 ## Changelog
 * 1.0.0 (2015-mm-dd)

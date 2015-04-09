@@ -56,8 +56,10 @@ class CorePrivacy {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'init', array( $this, 'open_sans' ) );
+
+		add_action( 'admin_enqueue_scripts', array( $this, 'open_sans' ) );
 		add_action( 'init', array( $this, 'gravatar' ) );
+
 	} // END __construct()
 
 	/**
