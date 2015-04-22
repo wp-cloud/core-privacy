@@ -1,10 +1,10 @@
 # Core Privacy
 > Improve privacy in WordPress core for usage in privacy-restrictive regions
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/wp-cloud/core-privacy/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/wp-cloud/core-privacy/?branch=develop)
 [![GPL-2.0+](http://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
-
-[Stable Releases](https://github.com/wp-cloud/core-privacy/releases) | [Current Development (`develop` branch)](https://github.com/wp-cloud/core-privacy)
+[![GitHub tag](https://img.shields.io/github/tag/wp-cloud/core-privacy.svg)](https://github.com/wp-cloud/core-privacy/releases)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/wp-cloud/core-privacy/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/wp-cloud/core-privacy/?branch=develop)
+[![Code Coverage](https://scrutinizer-ci.com/g/wp-cloud/core-privacy/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/wp-cloud/core-privacy/?branch=develop)
 
 ## Features
 - Load `Open Sans` locally (replaces Google Font API loading)
